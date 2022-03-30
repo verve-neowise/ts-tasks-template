@@ -1,0 +1,74 @@
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="navbar-brand align-items-center d-flex gap-2">
+            <img src="/images/t-icon.jpg" width="32px" alt="">
+            Tasks
+        </div>
+
+        <nav class="nav nav-pills">
+            <a class="nav-link active" aria-current="page" href="/">All Tasks</a>
+            <a class="nav-link text-white" href="/users">Users</a>
+        </nav>
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Add Task
+        </button>
+    </div>
+</nav>
+
+<div class="container-sm w-50 p-4 d-flex flex-column gap-2">
+    <h1 class="display-5">All Tasks</h1>
+    <hr>
+    <!-- Task card -->
+	<div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h5>title</h5>
+            <span class="badge bg-primary p-2">
+                userId
+            </span>
+        </div>
+        <div class="card-body">
+            <p>
+                content
+            </p>
+        </div>
+    </div>
+    
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/tasks" method="post">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input id="title" name="title" type="text" class="form-control" placeholder="Title">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Select user</label>
+                        <select id="user" name="userId" class="form-select" aria-label="Select user">
+	                            <option value="id">name surname</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="content" class="form-label">Content</label>
+                        <textarea id="content" class="form-control" name="content" rows="4"></textarea>
+                    </div>
+                    <hr class="divider">
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

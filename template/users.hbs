@@ -1,0 +1,60 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="navbar-brand align-items-center d-flex gap-2">
+            <img src="/images/t-icon.jpg" width="32px" alt="">
+            Tasks
+        </div>
+
+        <nav class="nav nav-pills">
+            <a class="nav-link text-white" aria-current="page" href="/">All Tasks</a>
+            <a class="nav-link active " href="/users">Users</a>
+        </nav>
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Add User
+        </button>
+    </div>
+</nav>
+
+<div class="container-sm w-50 p-4 d-flex flex-column gap-2">
+    <h1 class="display-5">All Users</h1>
+    <hr>
+
+    <div class="list-group">
+        <a href="/users/0"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            	name surname
+            <i class="fa-solid fa-angle-right"></i>
+        </a>
+    </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/users" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input id="name" name="name" type="text" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="surname" class="form-label">Surname</label>
+                        <input id="surname" name="surname" type="text" class="form-control">
+                    </div>
+
+                    <hr class="divider">
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
